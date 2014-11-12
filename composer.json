@@ -1,0 +1,32 @@
+{
+  "name": "skalmi/cakephp-diffbot-datasource",
+  "description": "CakePHP DiffbotSource Plugin with DataSource",
+  "type": "cakephp-plugin",
+  "keywords": [
+    "cakephp",
+    "database",
+    "datasource",
+    "plugin",
+    "diffbot"
+  ],
+  "homepage": "https://github.com/skalmi/CakePHP-DiffbotSource-Datasource",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Aleksandr Skuridin",
+      "email": "skuridin-alex@ya.ru",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "composer/installers": "*",
+    "imsamurai/http-source": "1.2.*"
+  },
+  "support": {
+    "email": "skuridin-alex@ya.ru",
+    "source": "https://github.com/skalmi/CakePHP-DiffbotSource-Datasource"
+  },
+  "extra": {
+    "installer-name": "DiffbotSource"
+  }
+}
