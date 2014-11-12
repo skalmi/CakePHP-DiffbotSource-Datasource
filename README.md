@@ -1,6 +1,6 @@
 DiffbotSource Plugin
 ==========================
-[![Build Status](https://travis-ci.org/skalmi/CakePHP-DiffbotSource-Datasource.png)](https://travis-ci.org/skalmi/CakePHP-DiffbotSource-Datasource) [![Coverage Status](https://travis-ci.org/skalmi/CakePHP-DiffbotSource-Datasource/badge.png?branch=master)](https://travis-ci.org/skalmi/CakePHP-DiffbotSource-Datasource?branch=master)
+[![Build Status](https://travis-ci.org/skalmi/CakePHP-DiffbotSource-Datasource.png)](https://travis-ci.org/skalmi/CakePHP-DiffbotSource-Datasource) [![Coverage Status](https://travis-ci.org/skalmi/CakePHP-DiffbotSource-Datasource/badge.png?branch=master)](https://travis-ci.org/skalmi/CakePHP-DiffbotSource-Datasource?branch=master)[![Latest Stable Version](https://poser.pugx.org/skalmi/cakephp-diffbot-datasource/v/stable.png)](https://packagist.org/packages/skalmi/cakephp-diffbot-datasource) [![Total Downloads](https://poser.pugx.org/skalmi/cakephp-diffbot-datasource/downloads.png)](https://packagist.org/packages/imsamurai/elasticsearch-source) [![Latest Unstable Version](https://poser.pugx.org/skalmi/cakephp-diffbot-datasource/v/unstable.png)](https://packagist.org/packages/skalmi/cakephp-diffbot-datasource) [![License](https://poser.pugx.org/skalmi/cakephp-diffbot-datasource/license.png)](https://packagist.org/packages/skalmi/cakephp-diffbot-datasource)
 
 
 CakePHP DiffbotSource is DataSource Plugin  for [Diffbot](http://www.diffbot.com/)
