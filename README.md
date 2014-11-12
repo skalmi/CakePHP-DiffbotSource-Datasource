@@ -35,8 +35,8 @@ public $diffbot = array(
   'port' => 'some port'
 );
 public $diffbotTest = array(
-  'datasource' => 'ElasticsearchSource.Http/ElasticsearchSource',
-  'host' => 'www.diffbot.com',
+  'datasource' => 'DiffbotSource.Http/DiffbotSource',
+  'host' => 'api.diffbot.com',
   'prefix' => '',
   'port' => 80,
   'timeout' => 5
