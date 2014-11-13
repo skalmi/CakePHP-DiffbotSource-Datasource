@@ -15,20 +15,25 @@ App::uses('HttpSourceModel', 'HttpSource.Model');
  */
 class DiffbotModel extends HttpSourceModel {
 
-/**
- * {@inheritdoc}
- *
- * @var string
- */
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @var string
+	 */
 	public $name = 'DiffbotModel';
 
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @var boll
+	 */
 	public $useTable = false;
 
-/**
- * {@inheritdoc}
- *
- * @var string
- */
+	/**
+	 * {@inheritdoc}
+	 *
+	 * @var string
+	 */
 	public $useDbConfig = 'diffBot';
 
 
