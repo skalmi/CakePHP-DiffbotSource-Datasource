@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Cakephp-diffbotsource-datasource : CakePHP DiffbotSource is DataSource Plugin for diffbot">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Cakephp-diffbotsource-datasource</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/skalmi/CakePHP-DiffbotSource-Datasource">View on GitHub</a>
+
+          <h1 id="project_title">Cakephp-diffbotsource-datasource</h1>
+          <h2 id="project_tagline">CakePHP DiffbotSource is DataSource Plugin for diffbot</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/skalmi/CakePHP-DiffbotSource-Datasource/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/skalmi/CakePHP-DiffbotSource-Datasource/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="diffbotsource-plugin" class="anchor" href="#diffbotsource-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>DiffbotSource Plugin</h1>
+
+<p>CakePHP DiffbotSource is DataSource Plugin  for <a href="http://www.diffbot.com/">Diffbot</a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="step-1-clone-or-download-httpsource" class="anchor" href="#step-1-clone-or-download-httpsource" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1: Clone or download <a href="https://github.com/imsamurai/cakephp-httpsource-datasource">HttpSource</a>
+</h3>
+
+<h3>
+<a id="step-2-clone-or-download-to-plugindiffbotsource" class="anchor" href="#step-2-clone-or-download-to-plugindiffbotsource" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2: Clone or download to <code>Plugin/DiffbotSource</code>
+</h3>
+
+<p>cd my_cake_app/app git://github.com/skalmi/CakePHP-DiffbotSource-Datasource.git Plugin/DiffbotSource</p>
+
+<p>or if you use git add as submodule:</p>
+
+<pre><code>cd my_cake_app
+git submodule add "git://github.com/skalmi/CakePHP-DiffbotSource-Datasource.git" "app/Plugin/DiffbotSource"
+</code></pre>
+
+<p>then update submodules:</p>
+
+<pre><code>git submodule init
+git submodule update
+</code></pre>
+
+<h3>
+<a id="step-3-add-your-configuration-to-databasephp-and-set-it-to-the-model" class="anchor" href="#step-3-add-your-configuration-to-databasephp-and-set-it-to-the-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3: Add your configuration to <code>database.php</code> and set it to the model</h3>
+
+<pre><code>:: database.php ::
+</code></pre>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-s">public</span> <span class="pl-v"><span class="pl-pdv">$</span>diffbot</span> <span class="pl-ko">=</span> <span class="pl-sf">array</span>(</span>
+<span class="pl-s2">  <span class="pl-s1"><span class="pl-pds">'</span>datasource<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>DiffbotSource.Http/DiffbotSource<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">  <span class="pl-s1"><span class="pl-pds">'</span>host<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>example.com<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">  <span class="pl-s1"><span class="pl-pds">'</span>port<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>some port<span class="pl-pds">'</span></span></span>
+<span class="pl-s2">);</span>
+<span class="pl-s2"><span class="pl-s">public</span> <span class="pl-v"><span class="pl-pdv">$</span>diffbotTest</span> <span class="pl-ko">=</span> <span class="pl-sf">array</span>(</span>
+<span class="pl-s2">  <span class="pl-s1"><span class="pl-pds">'</span>datasource<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>DiffbotSource.Http/DiffbotSource<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">  <span class="pl-s1"><span class="pl-pds">'</span>host<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>api.diffbot.com<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">  <span class="pl-s1"><span class="pl-pds">'</span>prefix<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">  <span class="pl-s1"><span class="pl-pds">'</span>port<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-cn">80</span>,</span>
+<span class="pl-s2">  <span class="pl-s1"><span class="pl-pds">'</span>timeout<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-cn">5</span></span>
+<span class="pl-s2">);</span></pre></div>
+
+<p>Then make model</p>
+
+<pre><code>:: Diffbot.php ::
+</code></pre>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-s">public</span> <span class="pl-v"><span class="pl-pdv">$</span>useDbConfig</span> <span class="pl-ko">=</span> <span class="pl-s1"><span class="pl-pds">'</span>diffbot<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s2"><span class="pl-s">public</span> <span class="pl-v"><span class="pl-pdv">$</span>useTable</span> <span class="pl-ko">=</span> <span class="pl-s1"><span class="pl-pds">'</span>&lt;desired endpoint, for ex: "article"&gt;<span class="pl-pds">'</span></span>;</span></pre></div>
+
+<h3>
+<a id="step-4-load-plugin" class="anchor" href="#step-4-load-plugin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Load plugin</h3>
+
+<pre><code>:: bootstrap.php ::
+</code></pre>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-sc">CakePlugin</span><span class="pl-ko">::</span>load(<span class="pl-s1"><span class="pl-pds">'</span>HttpSource<span class="pl-pds">'</span></span>, <span class="pl-sf">array</span>(<span class="pl-s1"><span class="pl-pds">'</span>bootstrap<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-c1">true</span>, <span class="pl-s1"><span class="pl-pds">'</span>routes<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-c1">true</span>));</span>
+<span class="pl-s2"><span class="pl-sc">CakePlugin</span><span class="pl-ko">::</span>load(<span class="pl-s1"><span class="pl-pds">'</span>DiffbotSource<span class="pl-pds">'</span></span>, <span class="pl-sf">array</span>(<span class="pl-s1"><span class="pl-pds">'</span>bootstrap<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-c1">false</span>, <span class="pl-s1"><span class="pl-pds">'</span>routes<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-c1">false</span>));</span></pre></div>
+
+<h1>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tests</h1>
+
+<p>To run tests add and fill $diffbotTest in <code>database.php</code></p>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<p>You can use elasticsearch almost as db tables:</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-v"><span class="pl-pdv">$</span>this</span><span class="pl-ko">-&gt;</span><span class="pl-v">Diffbot</span><span class="pl-ko">-&gt;</span>setSource(<span class="pl-s1"><span class="pl-pds">'</span>article<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s2">    <span class="pl-v"><span class="pl-pdv">$</span>params</span> <span class="pl-ko">=</span> <span class="pl-sf">array</span>(</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>conditions<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-sf">array</span>(</span>
+<span class="pl-s2">            <span class="pl-s1"><span class="pl-pds">'</span>query<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-sf">array</span>(</span>
+<span class="pl-s2">                <span class="pl-s1"><span class="pl-pds">"</span>term<span class="pl-pds">"</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-sf">array</span>(<span class="pl-s1"><span class="pl-pds">"</span>title<span class="pl-pds">"</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-s1"><span class="pl-pds">"</span>apple<span class="pl-pds">"</span></span>)</span>
+<span class="pl-s2">            )</span>
+<span class="pl-s2">        ),</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>fields<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-sf">array</span>(<span class="pl-s1"><span class="pl-pds">'</span>title<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>rank<span class="pl-pds">'</span></span>),</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>order<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-sf">array</span>(<span class="pl-s1"><span class="pl-pds">'</span>rank<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>desc<span class="pl-pds">'</span></span>),</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>offset<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-cn">2</span></span>
+<span class="pl-s2">    );</span>
+<span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-v"><span class="pl-pdv">$</span>result</span> <span class="pl-ko">=</span> <span class="pl-v"><span class="pl-pdv">$</span>this</span><span class="pl-ko">-&gt;</span><span class="pl-v">Diffbot</span><span class="pl-ko">-&gt;</span>find(<span class="pl-s1"><span class="pl-pds">'</span>first<span class="pl-pds">'</span></span>, <span class="pl-v"><span class="pl-pdv">$</span>params</span>);</span></pre></div>
+
+<h1>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h1>
+
+<p>Please read <a href="https://github.com/imsamurai/cakephp-httpsource-datasource/blob/master/README.md">HttpSource Plugin README</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Cakephp-diffbotsource-datasource maintained by <a href="https://github.com/skalmi">skalmi</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
