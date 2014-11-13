@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Author: imsamurai <im.samuray@gmail.com>
- * Date: 10.10.2013
+ * Author: skuridin <skuridin-alex@ya.ru>
+ * Date: 12.11.2013
  * Time: 18:00:00
  */
 
