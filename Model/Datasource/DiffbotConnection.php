@@ -16,21 +16,13 @@ App::uses('HttpSourceConnection', 'HttpSource.Model/Datasource');
  */
 class DiffbotConnection extends HttpSourceConnection {
 
-	/**
-	 * Response error
-	 *
-	 * @var string
-	 */
-	protected $_error = null;
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @param array $request
-	 * @return mixed false on error, decoded response array on success
-	 */
+/**
+ * Issue the specified request and get error from response
+ *
+ * @param array $request request parameters
+ * @return mixed false on error, decoded response array on success
+ */
 	public function request($request = array()) {
-
 		$response = parent::request($request);
 		$this->_error = Hash::get((array)$response, 'error');
 		if ($this->_error) {

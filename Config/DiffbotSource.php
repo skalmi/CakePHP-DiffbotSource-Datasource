@@ -36,7 +36,7 @@ $Config
 				->addCondition($CF->condition()->name('timeout')->sendInQuery())
 				->addCondition($CF->condition()->name('callback')->sendInQuery())
 				->result($CF->result()
-						->map(function($data) {
+						->map(function ($data) {
 							return $data['objects'];
 						})
 				)

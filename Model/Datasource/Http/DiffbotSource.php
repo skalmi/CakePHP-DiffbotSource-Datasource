@@ -15,26 +15,23 @@ App::uses('DiffbotConnection', 'DiffbotSource.Model/Datasource');
  * @subpackage Model.Datasource.Http
  */
 class DiffbotSource extends HttpSource {
-	const HTTP_METHOD_READ = 'GET';
 
-	/**
-	 * Diffbot API Datasource
-	 *
-	 * @var string
-	 */
+/**
+ * Diffbot API Datasource
+ *
+ * @var string
+ */
 	public $description = 'DiffbotSource DataSource';
-	/**
-	 * Constructor
-	 * 
-	 * @param array $config
-	 * @param HttpSourceConnection $Connection
-	 * @throws RuntimeException
-	 */
+
+/**
+ * Constructor
+ * 
+ * @param array $config configuration parameters
+ * @param HttpSourceConnection $Connection connection resource
+ * @throws RuntimeException
+ */
 	public function __construct($config = array(), HttpSourceConnection $Connection = null) {
 		$Connection = $Connection ? $Connection : new DiffbotConnection($config);
-		//var_dump($Connection); exit;
-		parent::__construct($config,  $Connection);
-
+		parent::__construct($config, $Connection);
 	}
-
 }

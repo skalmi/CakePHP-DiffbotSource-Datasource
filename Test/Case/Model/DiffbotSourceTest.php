@@ -20,30 +20,30 @@ App::uses('HttpSocketResponse', 'Network/Http');
  */
 class DiffbotSourceTest extends CakeTestCase {
 
-	/**
-	 * DiffbotSource Model
-	 *
-	 * @var AppModel
-	 */
+/**
+ * DiffbotSource Model
+ *
+ * @var AppModel
+ */
 	public $Model = null;
 
-	/**
-	 * {@inheritdoc}
-	 */
+/**
+ * {@inheritdoc}
+ */
 	public function setUp() {
 		parent::setUp();
 		$this->Model = new DiffbotModel(false, false, 'diffbotTest');
 	}
 
-	/**
-	 * Test article
-	 * 
-	 * @param array $request
-	 * @param string $response
-	 * @param float $result
-	 * 
-	 * @dataProvider getArticleProvider
-	 */
+/**
+ * Test article
+ * 
+ * @param array $request
+ * @param string $response
+ * @param float $result
+ * 
+ * @dataProvider getArticleProvider
+ */
 	public function testArticle(array $request, $response, $result) {
 		$this->_mockConnection($request, $response);
 
@@ -52,19 +52,19 @@ class DiffbotSourceTest extends CakeTestCase {
 		$res = $this->Model->find('first',
 			array('conditions' =>
 				array('token' => 'token',
-					 'url' => 'http://headlines.example.com/hl?a=20141106-00000032-rcdc-cn',
-					 'fields' => 'text'
+					'url' => 'http://headlines.example.com/hl?a=20141106-00000032-rcdc-cn',
+					'fields' => 'text'
 					)
 				)
 			);
 		$this->assertSame($result, $res[$this->Model->alias]['title']);
 	}
 
-	/**
-	 * Data provider for testArticle
-	 * 
-	 * @return array
-	 */
+/**
+ * Data provider for testArticle
+ * 
+ * @return array
+ */
 	public function getArticleProvider() {
 		return array(
 			//set #0
@@ -107,13 +107,12 @@ class DiffbotSourceTest extends CakeTestCase {
 		);
 	}
 
-
-	/**
-	 * Mock connection for test purposes
-	 * 
-	 * @param array $request
-	 * @param string $response
-	 */
+/**
+ * Mock connection for test purposes
+ * 
+ * @param array $request
+ * @param string $response
+ */
 	protected function _mockConnection($request, $response) {
 		ConnectionManager::create('diffbotTest', array(
 			'datasource' => 'DiffbotSource.DiffbotTestSource',
@@ -140,21 +139,21 @@ class DiffbotSourceTest extends CakeTestCase {
  */
 class DiffbotTestSource extends DiffbotSource {
 
-	/**
-	 * {@inheritdoc}
-	 * 
-	 * @param array $config
-	 * @param HttpSourceConnection $Connection
-	 */
+/**
+ * {@inheritdoc}
+ * 
+ * @param array $config
+ * @param HttpSourceConnection $Connection
+ */
 	public function __construct($config = array(), HttpSourceConnection $Connection = null) {
 		parent::__construct($config, $Connection);
 	}
 
-	/**
-	 * Method for inject mocked connection
-	 * 
-	 * @param HttpSourceConnection $Connection
-	 */
+/**
+ * Method for inject mocked connection
+ * 
+ * @param HttpSourceConnection $Connection
+ */
 	public function setConnection(HttpSourceConnection $Connection) {
 		parent::__construct($this->config, $Connection);
 	}
@@ -165,5 +164,5 @@ class DiffbotTestSource extends DiffbotSource {
  * Connection class for tests
  */
 class DiffbotTestHttpSourceConnection extends HttpSourceConnection {
-	
+
 }

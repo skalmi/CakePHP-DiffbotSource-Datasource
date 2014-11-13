@@ -9,26 +9,26 @@
 App::uses('HttpSourceModel', 'HttpSource.Model');
 
 /**
- * ElasticsearchModel Model
+ * DiffbotModel Model
  * 
  * @package DiffbotSource
  */
 class DiffbotModel extends HttpSourceModel {
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @var string
-	 */
+/**
+ * {@inheritdoc}
+ *
+ * @var string
+ */
 	public $name = 'DiffbotModel';
 
 	public $useTable = false;
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @var string
-	 */
+/**
+ * {@inheritdoc}
+ *
+ * @var string
+ */
 	public $useDbConfig = 'diffBot';
 
 

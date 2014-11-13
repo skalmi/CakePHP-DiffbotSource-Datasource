@@ -15,11 +15,11 @@
  */
 class AllDiffbotSourceTest extends PHPUnit_Framework_TestSuite {
 
-	/**
-	 * 	All DiffbotSource tests suite
-	 *
-	 * @return PHPUnit_Framework_TestSuite the instance of PHPUnit_Framework_TestSuite
-	 */
+/**
+ * 	All DiffbotSource tests suite
+ *
+ * @return PHPUnit_Framework_TestSuite the instance of PHPUnit_Framework_TestSuite
+ */
 	public static function suite() {
 		$suite = new CakeTestSuite('All DiffbotSource Tests');
 		$basePath = App::pluginPath('DiffbotSource') . 'Test' . DS . 'Case' . DS;
