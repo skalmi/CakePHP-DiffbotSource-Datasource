@@ -37,7 +37,7 @@ $Config
 				->addCondition($CF->condition()->name('callback')->sendInQuery())
 				->result($CF->result()
 						->map(function ($data) {
-							return $data['objects'];
+							return isset($data['objects']) ? $data['objects'] : null;
 						})
 				)
 		);

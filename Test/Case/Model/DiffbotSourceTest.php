@@ -10,6 +10,7 @@ App::uses('DiffbotModel', 'DiffbotSource.Model');
 App::uses('DiffbotSource', 'DiffbotSource.Model/Datasource/Http');
 App::uses('DiffbotTestSource', 'DiffbotSource.Model/Datasource/Http');
 App::uses('HttpSourceConnection', 'HttpSource.Model/Datasource');
+App::uses('DiffbotConnection', 'DiffbotSource.Model/Datasource');
 App::uses('HttpSocketResponse', 'Network/Http');
 
 /**
@@ -50,8 +51,10 @@ class DiffbotSourceTest extends CakeTestCase {
 		$this->Model->setSource('article');
 
 		$res = $this->Model->find('first',
-			array('conditions' =>
-				array('token' => 'token',
+			array(
+				'conditions' =>
+				array(
+					'token' => 'token',
 					'url' => 'http://headlines.example.com/hl?a=20141106-00000032-rcdc-cn',
 					'fields' => 'text'
 					)
@@ -61,7 +64,32 @@ class DiffbotSourceTest extends CakeTestCase {
 	}
 
 	/**
-	 * Data provider for testArticle
+	 * Test article2
+	 * 
+	 * @param array $request
+	 * @param string $response
+	 * @param float $result
+	 * 
+	 * @dataProvider getArticleErrorProvider
+	 */
+	public function testArticleError(array $request, $response, $result) {
+		$this->_mockConnection($request, $response);
+
+		$this->Model->setSource('article');
+
+		$res = $this->Model->find('first',
+			array('conditions' =>
+				array('token' => 'token',
+					'url' => 'http://headlines.example.com/hl?a=20141106-00000032-rcdc-cn',
+					'fields' => 'text'
+					)
+				)
+			);
+		$this->assertSame($result, $res);
+	}
+
+	/**
+	 * Data provider for testArticleError
 	 * 
 	 * @return array
 	 */
@@ -108,6 +136,53 @@ class DiffbotSourceTest extends CakeTestCase {
 	}
 
 	/**
+	 * Data provider for testArticleError
+	 * 
+	 * @return array
+	 */
+	public function getArticleErrorProvider() {
+		return array(
+			//set #0
+			array(
+				//request
+				array(
+					'method' => 'GET',
+					'body' => array(),
+					'uri' => array(
+						'host' => 'api.diffbot.com',
+						'port' => 80,
+						'path' => '/v3/article',
+						'query' => array('token' => 'token',
+									'url' => 'http://headlines.example.com/hl?a=20141106-00000032-rcdc-cn',
+									'fields' => 'text'
+									)
+					)
+				),
+				//response
+				'HTTP/1.1 200 OK' .
+				"\r\n" .
+				'Server: nginx/1.6.0' .
+				"\r\n" .
+				'Date: Wed, 12 Nov 2014 16:07:53 GMT' .
+				"\r\n" .
+				'Content-Type: application/json;charset=utf-8' .
+				"\r\n" .
+				'Content-Length: 4695' .
+				"\r\n" .
+				'Connection: keep-alive' .
+				"\r\n" .
+				'Vary: Accept-Encoding' .
+				"\r\n" .
+				'Access-Control-Allow-Origin: *' .
+				"\r\n" . "\r\n" .
+				'{"errorCode": 401,"error": "Not authorized API token."}',
+				//result
+				array()
+			)
+		);
+	}
+
+	/**
 	 * Mock connection for test purposes
 	 * 
 	 * @param array $request
@@ -125,7 +200,7 @@ class DiffbotSourceTest extends CakeTestCase {
 		$this->Model = new DiffbotModel(false, false, 'diffbotTest');
 
 		$DS = $this->Model->getDataSource();
-		$Connection = $this->getMock('DiffbotTestHttpSourceConnection', array(
+		$Connection = $this->getMock('DiffbotTestConnection', array(
 			'_request'
 				), array($DS->config));
 		$Connection->expects($this->once())->method('_request')->with($request)->will($this->returnValue(new HttpSocketResponse($response)));
@@ -163,6 +238,6 @@ class DiffbotTestSource extends DiffbotSource {
 /**
  * Connection class for tests
  */
-class DiffbotTestHttpSourceConnection extends HttpSourceConnection {
+class DiffbotTestConnection extends DiffbotConnection {
 
 }
