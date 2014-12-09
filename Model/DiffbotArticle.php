@@ -33,7 +33,7 @@ class DiffbotArticle extends DiffbotModel {
 	 * Get description and status by link
 	 * 
 	 * @param string $link
-	 * @param string $status 1 = ok, 2 = fail
+	 * @param int $status 1 = ok, 2 = fail
 	 * @return string
 	 * @throws Exception
 	 */
