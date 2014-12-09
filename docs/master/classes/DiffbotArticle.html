@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>    API Documentation &raquo; \DiffbotModel
+    <title>    API Documentation &raquo; \DiffbotArticle
 </title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
@@ -117,9 +117,15 @@
         <li class="nav-header">
             <i class="icon-custom icon-method"></i> Methods
             <ul>
-                                                                                                    <li class="method public">
+                                                                                                    <li class="method public inherited">
         <a href="#method_beforeFind" title="beforeFind :: Modify parameters before find data">
             <span class="description">Modify parameters before find data</span><pre>beforeFind</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getDescriptionByLink" title="getDescriptionByLink :: Get description and status by link">
+            <span class="description">Get description and status by link</span><pre>getDescriptionByLink</pre>
         </a>
     </li>
 
@@ -127,11 +133,11 @@
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                </ul>
+                                                                                                                    </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                </ul>
+                                                                                                                    </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -145,11 +151,11 @@
 
         <div class="span8">
             <div class="element class">
-                <h1>DiffbotModel</h1>
+                <h1>DiffbotArticle</h1>
                 <small style="display: block; text-align: right">
-                                            Extends \HttpSourceModel
+                                            Extends <a href="../classes/DiffbotModel.html">\DiffbotModel</a>
                                                         </small>
-                <p class="short_description">DiffbotModel Model</p>
+                <p class="short_description">DiffbotArticle Model</p>
                 <div class="details">
                     <div class="long_description">
                         
@@ -168,11 +174,11 @@
 
                     <h3><i class="icon-custom icon-method"></i> Methods</h3>
                                                                 <a id="method_beforeFind"></a>
-                        <div class="element clickable method public  method_beforeFind" data-toggle="collapse" data-target=".method_beforeFind .collapse">
+                        <div class="element clickable method public  method_beforeFind inherited" data-toggle="collapse" data-target=".method_beforeFind .collapse">
                             <h2>Modify parameters before find data</h2>
                             <pre>beforeFind(array $queryData) : array</pre>
                             <div class="labels">
-                                                                                                                                                                                            </div>
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
 
                             
                             <div class="row collapse">
@@ -194,15 +200,55 @@
                             </div>
 
                         </div>
+                                            <a id="method_getDescriptionByLink"></a>
+                        <div class="element clickable method public  method_getDescriptionByLink" data-toggle="collapse" data-target=".method_getDescriptionByLink .collapse">
+                            <h2>Get description and status by link</h2>
+                            <pre>getDescriptionByLink(string $link, string &$status) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$link</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$status</h4>
+                                                <code>string</code><p><p>1 = ok, 2 = fail</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                     
                     
                                                                 <h3><i class="icon-custom icon-property"></i> Properties</h3>
                                                     <a id="property_name"> </a>
-                            <div class="element clickable property  public property_name" data-toggle="collapse" data-target=".property_name .collapse">
+                            <div class="element clickable property  public property_name inherited" data-toggle="collapse" data-target=".property_name .collapse">
                                 <h2>{@inheritdoc}</h2>
                                 <pre>name : string</pre>
                                 <div class="labels">
-                                                                                                        </div>
+                                    <span class="label">inherited</span>                                                                    </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
                                         <div class="long_description"></div>
@@ -224,11 +270,11 @@
                                 </div>
                             </div>
                                                     <a id="property_useTable"> </a>
-                            <div class="element clickable property  public property_useTable" data-toggle="collapse" data-target=".property_useTable .collapse">
+                            <div class="element clickable property  public property_useTable inherited" data-toggle="collapse" data-target=".property_useTable .collapse">
                                 <h2>{@inheritdoc}</h2>
                                 <pre>useTable : boolean</pre>
                                 <div class="labels">
-                                                                                                        </div>
+                                    <span class="label">inherited</span>                                                                    </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
                                         <div class="long_description"></div>
@@ -250,11 +296,11 @@
                                 </div>
                             </div>
                                                     <a id="property_useDbConfig"> </a>
-                            <div class="element clickable property  public property_useDbConfig" data-toggle="collapse" data-target=".property_useDbConfig .collapse">
+                            <div class="element clickable property  public property_useDbConfig inherited" data-toggle="collapse" data-target=".property_useDbConfig .collapse">
                                 <h2>{@inheritdoc}</h2>
                                 <pre>useDbConfig : string</pre>
                                 <div class="labels">
-                                                                                                        </div>
+                                    <span class="label">inherited</span>                                                                    </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
                                         <div class="long_description"></div>
@@ -277,14 +323,14 @@
                             </div>
                                                             </div>
             </div>
-            <a id="\DiffbotModel"></a>
+            <a id="\DiffbotArticle"></a>
             <ul class="breadcrumb">
                 <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
                     
     
     <li><span class="divider">\</span><a href="../namespaces/default.html">\</a></li>
 
-                <li class="active"><span class="divider">\</span><a href="../classes/DiffbotModel.html">DiffbotModel</a></li>
+                <li class="active"><span class="divider">\</span><a href="../classes/DiffbotArticle.html">DiffbotArticle</a></li>
             </ul>
         </div>
     </div>
