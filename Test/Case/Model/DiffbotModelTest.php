@@ -9,6 +9,9 @@
 
 /**
  * DiffbotModelTest
+ * 
+ * @package DiffbotSourceTest
+ * @subpackage Model
  */
 class DiffbotModelTest extends CakeTestCase {
 
