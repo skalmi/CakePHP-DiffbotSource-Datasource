@@ -36,5 +36,20 @@ class DiffbotModel extends HttpSourceModel {
 	 */
 	public $useDbConfig = 'diffBot';
 
+	/**
+	 * Modify parameters before find data
+	 *
+	 * @param array $queryData
+	 * @return array
+	 */
+	public function beforeFind($queryData) {
+		if (!parent::beforeFind($queryData)) {
+			return false;
+		}
+		if (empty($queryData['conditions']['token'])) {
+			$queryData['conditions']['token'] = Configure::read('DiffBot.token');
+		}
+		return $queryData;
+	}
 
 }
