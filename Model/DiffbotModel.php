@@ -25,7 +25,7 @@ class DiffbotModel extends HttpSourceModel {
 	/**
 	 * {@inheritdoc}
 	 *
-	 * @var boll
+	 * @var bool
 	 */
 	public $useTable = false;
 
