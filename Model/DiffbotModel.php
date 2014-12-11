@@ -43,7 +43,7 @@ class DiffbotModel extends HttpSourceModel {
 	 * @return array
 	 */
 	public function beforeFind($queryData) {
-		if (!parent::beforeFind($queryData)) {
+		if ( false === parent::beforeFind($queryData) ) {
 			return false;
 		}
 		if (empty($queryData['conditions']['token'])) {
